@@ -51,7 +51,7 @@ namespace TunnelPaste
         {
             return UnregisterHotKey(hWnd, id);
         } 
-        public static void releaseControl()
+        public static void ReleaseControl()
         {
             keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0);
         }

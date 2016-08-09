@@ -14,13 +14,13 @@ namespace TunnelPaste
     {
         private KeyHandler hotKey;
         private KeyHandler vKey;
+
+        private bool removeSpaces;
        
         public Form1()
         {
             InitializeComponent();
 
-
-      
         }
         //Overrides
         protected override void WndProc(ref Message m)
@@ -36,14 +36,12 @@ namespace TunnelPaste
             int id = m.WParam.ToInt32();
             if (hotKey != null  && id == hotKey.id)
             {
-                Console.WriteLine("hotkey pressed");
                 TunnelPaste.pasteClipboard();
             }
             else if (vKey != null && id == vKey.id)
             {
-                Console.WriteLine("ctrl+v pressed");
-                KeyHandler.releaseControl();
-                TunnelPaste.pasteClipboard();
+                KeyHandler.ReleaseControl();
+                TunnelPaste.pasteClipboard(removeSpaces);
             }
 
         }
@@ -98,6 +96,11 @@ namespace TunnelPaste
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            removeSpaces = checkBox2.Checked;
         }
     }
 }
