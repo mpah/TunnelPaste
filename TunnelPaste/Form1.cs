@@ -79,7 +79,7 @@ namespace TunnelPaste
             }
             else if(vKey != null)
             {
-                vKey.Unregiser();
+                vKey.Unregister();
             }
         }
 
@@ -87,7 +87,7 @@ namespace TunnelPaste
         {
             if(hotKey != null)
             {
-                hotKey.Unregiser();
+                hotKey.Unregister();
             }
         }
         void Form1_KeyPress(object sender, KeyPressEventArgs e)

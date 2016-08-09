@@ -47,7 +47,7 @@ namespace TunnelPaste
             return RegisterHotKey(hWnd, id, mod, key);
         }
 
-        public bool Unregiser()
+        public bool Unregister()
         {
             return UnregisterHotKey(hWnd, id);
         } 
